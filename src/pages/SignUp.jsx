@@ -5,6 +5,7 @@ import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { setDoc, doc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase/firebase.config'
+import { toast } from 'react-toastify'
 
 
 
@@ -45,6 +46,7 @@ export const SignUp = () => {
 
             navigate('/')
         } catch (error) {
+            toast.error('Something went wrong')
             console.log(error)
         }
     }
